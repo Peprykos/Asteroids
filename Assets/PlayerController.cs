@@ -80,5 +80,13 @@ public class PlayerController : MonoBehaviour
 
         //zniszcz pocisk po 5s
         Destroy(leftBullet, 5);
+
+        GameObject rightBullet = Instantiate(bulletPrefab, GunRight.position, Quaternion.identity);
+        //zmiana predkosci pocisku
+        rightBullet.GetComponent<Rigidbody>().AddForce(transform.forward * bulletSpeed,
+                                                        ForceMode.VelocityChange);
+
+        //zniszcz pocisk po 5s
+        Destroy(rightBullet, 5);
     }
 }
