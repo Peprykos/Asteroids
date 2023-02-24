@@ -14,6 +14,8 @@ public class LevelManager : MonoBehaviour
     public float spawnInterval = 5;
     //prefab kamulec
     public GameObject kamulecPrefab;
+    //ekran konca gry
+    public GameObject gameOverScreen;
 
     // Start is called before the first frame update
     void Start()
@@ -71,5 +73,11 @@ public class LevelManager : MonoBehaviour
                 break;
         }
         return randomSpawnLocation;
+    }
+    public void GameOver()
+    {
+        //zatrzymaj czas
+        Time.timeScale = 0;
+        gameOverScreen.SetActive(true);
     }
 }
